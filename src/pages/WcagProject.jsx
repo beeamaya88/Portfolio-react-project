@@ -3,32 +3,32 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 // Import the hero image from assets
-import wcagHeroImage from "../assets/WCAGmainhero.png";
+import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
 // Import hero video
 import wcagHeroVideo from "../videos/Wcagherovid.mp4";
 // Import the final logo (SVG)
-import finalLogo from "../assets/Finallogo.svg";
+import finalLogo from "../assets/WCAG-images/Finallogo.svg";
 // Import pre-logo SVGs
-import prelogo1 from "../assets/Prelogo1.svg";
-import prelogo2 from "../assets/Prelogo2.svg";
-import prelogo3 from "../assets/Prelogo3.svg";
-import prelogo4 from "../assets/Prelogo4.svg";
+import prelogo1 from "../assets/WCAG-images/Prelogo1.svg";
+import prelogo2 from "../assets/WCAG-images/Prelogo2.svg";
+import prelogo3 from "../assets/WCAG-images/Prelogo3.svg";
+import prelogo4 from "../assets/WCAG-images/Prelogo4.svg";
 // Import final design images
-import wcagHome from "../assets/Wcaghome.svg";
-import wcagProfile from "../assets/Wcagprofile.svg";
-import operableGalaxy from "../assets/Operablegalaxy.svg";
-import solarSystemView from "../assets/Solarsystemview.svg";
-import understandableGalaxy from "../assets/Understandablegalaxy.svg";
-import wcagExploration from "../assets/Wcagexploration.svg";
+import wcagHome from "../assets/WCAG-images/Wcaghome.svg";
+import wcagProfile from "../assets/WCAG-images/Wcagprofile.svg";
+import operableGalaxy from "../assets/WCAG-images/Operablegalaxy.svg";
+import solarSystemView from "../assets/WCAG-images/Solarsystemview.svg";
+import understandableGalaxy from "../assets/WCAG-images/Understandablegalaxy.svg";
+import wcagExploration from "../assets/WCAG-images/Wcagexploration.svg";
 // Import visual architecture image
-import galaxyArchitecture from "../assets/Galaxyarchitecture.svg";
+import galaxyArchitecture from "../assets/WCAG-images/Galaxyarchitecture.svg";
 // Import lesson sample video from videos folder
 import lessonSampleVideo from "../videos/Lessonsample2.mp4";
 // Import other project images
-import timeManagementImage from "../assets/Timemgmt.png";
-import mealUHeroImage from "../assets/MealUHero.png";
-import reactWeatherHeroImage from "../assets/Reactweatherhero.png";
-import lechaletHeroImage from "../assets/Lechaletbymay.png";
+import timeManagementImage from "../assets/Timemgmt-images/Timemgmt.png";
+import mealUHeroImage from "../assets/MealU-images/MealUHero.png";
+import reactWeatherHeroImage from "../assets/Reactweather-images/Reactweatherhero.png";
+import lechaletHeroImage from "../assets/Lechaletbymay-images/Lechaletbymay.png";
 
 function WcagProject() {
   const [activeSection, setActiveSection] = useState("overview");

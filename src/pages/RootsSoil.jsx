@@ -16,11 +16,11 @@ import viewOrdersImage from "../assets/Capstone-images/Vieworders.png";
 import userOrderHistoryImage from "../assets/Capstone-images/UserOrderHistory.png"
 
 
-import wcagHeroImage from "../assets/WCAGmainhero.png";
-import timeManagementImage from "../assets/Timemgmt.png";
-import mealUHeroImage from "../assets/MealUHero.png";
-import reactWeatherHeroImage from "../assets/Reactweatherhero.png";
-import lechaletHeroImage from "../assets/Lechaletbymay.png";
+import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
+import timeManagementImage from "../assets/Timemgmt-images/Timemgmt.png";
+import mealUHeroImage from "../assets/MealU-images/MealUHero.png";
+import reactWeatherHeroImage from "../assets/Reactweather-images/Reactweatherhero.png";
+import lechaletHeroImage from "../assets/Lechaletbymay-images/Lechaletbymay.png";
 
 function RootsSoilProject() {
   const [activeSection, setActiveSection] = useState("overview");

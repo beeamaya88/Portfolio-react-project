@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import project images
-import wcagImage from '../assets/WCAGmainhero.png';
+import wcagImage from '../assets/Wcag-images/WCAGmainhero.png';
 import timeManagementImage from '../assets/Timemgmt.png';
 import rootsSoilImage from "../assets/Capstone-images/Capstonehero.png";
 

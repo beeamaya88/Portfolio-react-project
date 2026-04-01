@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import WcagProject from './Pages/WcagProject';
+import WcagProject from './pages/WcagProject';
 import TimeManagementProject from "./pages/Timemgmt";
 import MealU from "./pages/Mealu";
 import ReactWeather from "./pages/Reactweather";
@@ -10,11 +10,11 @@ import Lechaletbymay from "./pages/Lechaletbymay";
 import RootsSoilProject from "./pages/RootsSoil";
 
 // Import project images
-import wcagHeroImage from "./assets/WCAGmainhero.png";
-import timeManagementImage from "./assets/Timemgmt.png";
-import mealUHeroImage from "./assets/MealUHero.png";
-import reactWeatherHeroImage from "./assets/Reactweatherhero.png"; 
-import lechaletHeroImage from "./assets/Lechaletbymay.png";
+import wcagHeroImage from "./assets/WCAG-images/Wcagmainhero.png";
+import timeManagementImage from "./assets/Timemgmt-images/Timemgmt.png";
+import mealUHeroImage from "./assets/MealU-images/MealUHero.png";
+import reactWeatherHeroImage from "./assets/Reactweather-images/Reactweatherhero.png"; 
+import lechaletHeroImage from "./assets/Lechaletbymay-images/Lechaletbymay.png";
 import rootsSoilImage from "./assets/Capstone-images/Capstonehero.png";
 // Import hero video and static hero image
 import portfolioHeroVideo from "./videos/Portfolioherovid.mp4";

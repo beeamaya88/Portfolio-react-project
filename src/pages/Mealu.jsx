@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 // Import hero image
-import mealUHeroImage from "../assets/MealUHero.png";
+import mealUHeroImage from "../assets/MealU-images/MealUHero.png";
 // Import other project images
-import wcagHeroImage from "../assets/WCAGmainhero.png";
-import timeManagementImage from "../assets/Timemgmt.png";
-import reactWeatherHeroImage from "../assets/Reactweatherhero.png";
-import lechaletHeroImage from "../assets/Lechaletbymay.png";
+import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
+import timeManagementImage from "../assets/Timemgmt-images/Timemgmt.png";
+import reactWeatherHeroImage from "../assets/Reactweather-images/Reactweatherhero.png";
+import lechaletHeroImage from "../assets/Lechaletbymay-images/Lechaletbymay.png";
 
 function MealU() {
   const [activeSection, setActiveSection] = useState("overview");
