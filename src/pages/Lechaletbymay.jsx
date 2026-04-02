@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 
 // Import hero image
 import lechaletHeroImage from "../assets/Lechaletbymay-images/Lechaletbymay.png";
+// Import wireframing image
+import wireframeImage from "../assets/Lechaletbymay-images/HPMenu.png";
+// Import final design images
+import oldWebsite1 from "../assets/Lechaletbymay-images/Oldwebsitehomepage.png";
+import oldWebsite2 from "../assets/Lechaletbymay-images/Oldwebsitemenu.png";
+import newDesign1 from "../assets/Lechaletbymay-images/NewHomepage.png";
+import newDesign2 from "../assets/Lechaletbymay-images/NewMenu.png";
+import newDesign3 from "../assets/Lechaletbymay-images/NewWishlist.png";
+
 // Import other project images
 import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
 import timeManagementImage from "../assets/Timemgmt-images/Timemgmt.png";
@@ -69,6 +78,45 @@ function Lechaletbymay() {
     }
   ];
 
+  // Final Designs data
+  const finalDesigns = [
+    {
+      title: "Old Website - Homepage",
+      desc: "Generic Shopify theme with limited customization and basic navigation",
+      emoji: "🏠",
+      image: oldWebsite1,
+      alt: "Old Le Chalet by May website homepage showing generic Shopify theme"
+    },
+    {
+      title: "Old Website - Dropdown Menu",
+      desc: "Standard menu layout with minimal visual appeal",
+      emoji: "🍔",
+      image: oldWebsite2,
+      alt: "Old Le Chalet by May menu dropdown with minimal visual appeal"
+    },
+    {
+      title: "New Design - Homepage",
+      desc: "Redesigned home page with visible call to action on hero image",
+      emoji: "🏠",
+      image: newDesign1,
+      alt: "New Le Chalet by May custom mega menu with rich imagery"
+    },
+    {
+      title: "New Design - Custom Mega Menu",
+      desc: "Custom-built mega menu with high-resolution imagery and multi-column layout",
+      emoji: "🍔",
+      image: newDesign2,
+      alt: "New Le Chalet by May custom mega menu with rich imagery"
+    },
+    {
+      title: "New Design - Custom Wishlist Page",
+      desc: "Native wishlist functionality with seamless Ajax-powered interactions",
+      emoji: "❤️",
+      image: newDesign3,
+      alt: "New Le Chalet by May custom wishlist page with saved products"
+    }
+  ];
+
   // Smooth scroll to section with offset for sticky navbar
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -83,7 +131,7 @@ function Lechaletbymay() {
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["overview", "discovery", "execution", "training", "results", "other"];
+      const sections = ["overview", "discovery", "execution", "training", "results", "final", "other"];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -126,13 +174,14 @@ function Lechaletbymay() {
     setSelectedImage(null);
   };
 
-  // Navigation items
+  // Navigation items - Added "final" section
   const navItems = [
     { id: "overview", label: "Overview", icon: "📋" },
     { id: "discovery", label: "Discovery", icon: "💡" },
     { id: "execution", label: "Execution", icon: "⚙️" },
     { id: "training", label: "Training", icon: "📚" },
     { id: "results", label: "Results", icon: "📊" },
+    { id: "final", label: "Final Designs", icon: "🎨" },
     { id: "other", label: "Other Projects", icon: "📁" }
   ];
 
@@ -521,18 +570,44 @@ function Lechaletbymay() {
                     the structure and user journey before any code was written.
                   </p>
                   <div className="insight-card p-4 rounded-4 text-center">
-                    <div className="placeholder-image mb-3" style={{ 
-                      background: "linear-gradient(135deg, #e9ecef, #dee2e6)",
-                      height: "300px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "12px"
-                    }}>
-                      <div className="text-center">
-                        <span style={{ fontSize: "3rem" }}>📐</span>
-                        <p style={{ marginTop: "1rem", color: "#666" }}>Wireframe Image Coming Soon</p>
-                        <small className="text-muted">Add your wireframe image to /assets/Wireframe.png</small>
+                    <div 
+                      className="wireframe-image-container mb-3"
+                      onClick={() => openImageModal(wireframeImage, "Menu Wireframe - Le Chalet by May")}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img 
+                        src={wireframeImage} 
+                        alt="Wireframe for Le Chalet by May menu, homepage, and product pages"
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          borderRadius: "12px",
+                          transition: "transform 0.2s ease"
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.02)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                        }}
+                      />
+                      <div
+                        style={{
+                          position: "relative",
+                          marginTop: "8px",
+                          textAlign: "center"
+                        }}
+                      >
+                        <span style={{ 
+                          fontSize: "0.75rem", 
+                          color: "var(--accent-purple)",
+                          display: "inline-block",
+                          padding: "4px 12px",
+                          background: "#f8f9fa",
+                          borderRadius: "20px"
+                        }}>
+                          🔍 Click to enlarge
+                        </span>
                       </div>
                     </div>
                     <p className="mb-0 insight-text">
@@ -544,7 +619,6 @@ function Lechaletbymay() {
                 <div>
                   <h4 className="fw-bold mb-3">Additional Requests</h4>
                   <div className="row g-3">
-                    
                     <div className="col-md-6">
                       <div className="concept-card p-4 rounded-4 h-100">
                         <span style={{ fontSize: "1.5rem" }}>🏷️</span>
@@ -710,6 +784,41 @@ function Lechaletbymay() {
                   <p className="mb-0 fst-italic result-quote-text">
                     "Through our training and collaborative brainstorming process, the owner now possesses the skills 
                     and knowledge to manage their sophisticated new website autonomously."
+                  </p>
+                </div>
+              </section>
+
+              {/* FINAL DESIGNS SECTION - NEW */}
+              <section id="final" className="mb-5 pb-4">
+                <h2 className="text-uppercase small fw-bold mb-4">Final Designs</h2>
+                <h3 className="fw-bold mb-4">Before & After: The Transformation</h3>
+                <p className="mb-5">
+                  Below you can see the dramatic transformation from the generic Shopify template to the custom-designed 
+                  Le Chalet by May experience. The old website lacked personality and intuitive navigation, while the new 
+                  design features a custom mega menu, native wishlist functionality, and a cohesive brand identity.
+                </p>
+
+                <div className="final-designs-vertical">
+                  {finalDesigns.map((item, index) => (
+                    <div key={index} className="design-item mb-5">
+                      <div className="design-header mb-3">
+                        <h5 className="fw-bold design-title">{item.emoji} {item.title}</h5>
+                        <p className="mb-2 design-desc">{item.desc}</p>
+                      </div>
+                      <div className="design-image-container" onClick={() => openImageModal(item.image, item.title)}>
+                        <img src={item.image} alt={item.alt} className="img-fluid rounded-3 design-image" />
+                        <div className="mt-3">
+                          <span className="enlarge-hint">🔍 Click to enlarge</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="highlight-box p-4 rounded-4 mt-4">
+                  <p className="fw-bold mb-0 highlight-text">
+                    💡 <strong>Key Impact:</strong> The redesign resulted in a 100% custom code solution with zero recurring fees, 
+                    improved mobile experience, and a unique brand identity that sets Le Chalet by May apart from competitors.
                   </p>
                 </div>
               </section>

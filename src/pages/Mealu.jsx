@@ -4,6 +4,25 @@ import { Link } from "react-router-dom";
 
 // Import hero image
 import mealUHeroImage from "../assets/MealU-images/MealUHero.png";
+// Import User Persona and Journey Map images
+import userPersonaImage from "../assets/MealU-images/Userpersona.svg";
+import journeyMapImage from "../assets/MealU-images/Journeymap.svg";
+// Import Information Architecture and User Flow Images
+import informationArchitectureImage from "../assets/MealU-images/MealUIA.png";
+import userFlowImage from "../assets/MealU-images/MUuserflow.png";
+import userFlow2Image from "../assets/MealU-images/MUuserflow2.png";
+// Import UI Design Concept Images
+import onboardingFlowImage from "../assets/MealU-images/Onboardingflow.png";
+import rewardSystemImage from "../assets/MealU-images/Rewardsystem.png";
+import accountManagementImage from "../assets/MealU-images/Accountmgmt.png";
+import personalizationImage from "../assets/MealU-images/Personalization.png";
+import mealSelectionImage from "../assets/MealU-images/Mealselection.png";
+import mealSelection2Image from "../assets/MealU-images/Mealselection2.png";
+import customerSupportImage from "../assets/MealU-images/Customersupport.png";
+import checkOutImage from "../assets/MealU-images/MUcheckout.png";
+// Import Branding & Style Guide Images
+import initialBrandImage from "../assets/MealU-images/Initialbrand.png";
+import finalBrandImage from "../assets/MealU-images/Finalbrand.png";
 // Import other project images
 import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
 import timeManagementImage from "../assets/Timemgmt-images/Timemgmt.png";
@@ -83,7 +102,7 @@ function MealU() {
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["overview", "research", "design", "results", "other"];
+      const sections = ["overview", "branding", "research", "design", "results", "other"];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -126,9 +145,10 @@ function MealU() {
     setSelectedImage(null);
   };
 
-  // Navigation items
+  // Navigation items - Updated with branding section
   const navItems = [
     { id: "overview", label: "Overview", icon: "📋" },
+    { id: "branding", label: "Branding", icon: "🎨" },
     { id: "research", label: "Research", icon: "🔍" },
     { id: "design", label: "Design", icon: "🎨" },
     { id: "results", label: "Results", icon: "📊" },
@@ -142,6 +162,66 @@ function MealU() {
     { value: "Convenient", description: "Grab-and-go or quick prep options", color: "var(--accent-pink)" },
     { value: "Accessible", description: "Available to all students regardless of kitchen setup", color: "var(--accent-yellow)" },
     { value: "Sustainable", description: "Eco-friendly packaging and practices", color: "var(--accent-dark)" }
+  ];
+
+  // UI Design Concepts data with images
+  const uiDesigns = [
+    { 
+      title: "Onboarding Flow", 
+      desc: "Welcome screen with student-focused messaging", 
+      emoji: "👋",
+      image: onboardingFlowImage,
+      alt: "Onboarding flow screens showing welcome message, sign up options, and student-focused onboarding experience for Meal U app"
+    },
+    { 
+      title: "Rewards System", 
+      desc: "Points for consistent ordering and referrals", 
+      emoji: "⭐",
+      image: rewardSystemImage,
+      alt: "Rewards system interface showing points accumulation, referral bonuses, and loyalty rewards for consistent Meal U customers"
+    },
+    { 
+      title: "Account Management", 
+      desc: "Subscription settings and delivery scheduling", 
+      emoji: "👤",
+      image: accountManagementImage,
+      alt: "Account management screen showing subscription settings, delivery schedule preferences, and profile management options"
+    },
+    { 
+      title: "Personalization", 
+      desc: "Ingredient substitution options", 
+      emoji: "🎨",
+      image: personalizationImage,
+      alt: "Personalization interface showing ingredient substitution options, dietary preferences, and meal customization features"
+    },
+    { 
+      title: "Meal Selection - View 1", 
+      desc: "Filter by dietary preferences, time, and budget", 
+      emoji: "🍽️",
+      image: mealSelectionImage,
+      alt: "Meal selection screen showing filter options for dietary preferences, cooking time, budget, and available meal choices"
+    },
+    { 
+      title: "Meal Selection - View 2", 
+      desc: "Browse available meals with detailed information", 
+      emoji: "📋",
+      image: mealSelection2Image,
+      alt: "Alternative meal selection view showing meal cards with nutritional information, pricing, and quick add to cart options"
+    },
+    { 
+      title: "Customer Support", 
+      desc: "In-app chat and help center", 
+      emoji: "💬",
+      image: customerSupportImage,
+      alt: "Customer support interface showing in-app chat for Meal U users"
+    },
+    { 
+      title: "Checkout", 
+      desc: "Checkout payment form and confirmation", 
+      emoji: "💳",
+      image: checkOutImage,
+      alt: "Checkout form with order summary, shipping address fields, payment method options, and payment confirmation screen showing successful order placement with order number."
+    }
   ];
 
   return (
@@ -266,7 +346,7 @@ function MealU() {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="hero-text-wrapper text-start mb-5">
-                <h1 className="hero-title mb-4">Meal U: Affordable Meal Delivery for College Students</h1>
+                <h1 className="hero-title mb-4">Meal U: Meal Delivery for College Students</h1>
                 <p className="hero-description" style={{ maxWidth: "100%", marginLeft: 0 }}>
                   A student-focused meal delivery service addressing the gap in the market for affordable, 
                   healthy, and convenient meal solutions designed specifically for college students living 
@@ -321,7 +401,7 @@ function MealU() {
                 <div className="col-md-3 col-sm-6">
                   <div className="project-info-column text-center p-3 rounded-3" style={{ background: "white", border: "1px solid #e9ecef" }}>
                     <span className="info-label d-block fw-bold mb-2">My Role</span>
-                    <span>UX/UI Designer</span>
+                    <span>UX/UI Apprentice</span>
                   </div>
                 </div>
                 <div className="col-md-3 col-sm-6">
@@ -333,7 +413,7 @@ function MealU() {
                 <div className="col-md-3 col-sm-6">
                   <div className="project-info-column text-center p-3 rounded-3" style={{ background: "white", border: "1px solid #e9ecef" }}>
                     <span className="info-label d-block fw-bold mb-2">Team</span>
-                    <span>Individual Project</span>
+                    <span>4 UX/UI Apprentices</span>
                   </div>
                 </div>
                 <div className="col-md-3 col-sm-6">
@@ -365,9 +445,9 @@ function MealU() {
                 <div className="mb-5">
                   <h4 className="fw-bold mb-3">Overview</h4>
                   <p className="mb-4">
-                   As part of my UX UI program capstone project, we were tasked 
+                   As part of my UX UI program capstone project, our team of 4 UX/UI apprentices was tasked 
                    to create a product that would identify a gap in the market.
-                    My team created a healthy, convenient, and budget-friendly 
+                    We created a healthy, convenient, and budget-friendly 
                   meal solutions that accommodate the unique 
                     constraints of student life, including limited kitchen access,
                      time restrictions, and 
@@ -433,7 +513,7 @@ function MealU() {
                   <div className="row">
                     <div className="col-md-7">
                       <p className="mb-3">
-                        <strong>UX/UI Designer</strong> contributing to:
+                        <strong>UX/UI Apprentice</strong> contributing to:
                       </p>
                       <ul className="custom-list">
                         <li>User research (qualitative interviews & quantitative surveys)</li>
@@ -458,7 +538,155 @@ function MealU() {
                 </div>
               </section>
 
-              {/* RESEARCH SECTION */}
+              {/* BRANDING & STYLE GUIDE SECTION */}
+              <section id="branding" className="mb-5 pb-4">
+                <h2 className="text-uppercase small fw-bold mb-4">Branding & Style Guide</h2>
+                <h3 className="fw-bold mb-4">Brand Evolution: From Concept to Final Identity</h3>
+                <p className="mb-4">
+                  I developed the brand identity for Meal U, starting with an initial concept and evolving it into 
+                  a refined, student-centered final design that better connects with the target audience.
+                </p>
+
+                {/* Side by Side Cards */}
+                <div className="row g-4">
+                  {/* Initial Brand Card */}
+                  <div className="col-md-6">
+                    <div className="branding-card h-100" style={{ 
+                      background: "white",
+                      border: "2px solid var(--accent-purple)",
+                      borderRadius: "20px",
+                      overflow: "hidden",
+                      boxShadow: "8px 8px 0 var(--shadow-color)",
+                      transition: "all 0.3s ease"
+                    }}>
+                      <div className="p-4" style={{ background: "var(--pastel-purple)", borderBottom: "2px solid var(--accent-purple)" }}>
+                        <h5 className="fw-bold mb-0" style={{ fontSize: "1.1rem", color: "var(--text-dark)" }}>
+                          📋 Initial: Meal University
+                        </h5>
+                      </div>
+                      <div 
+                        className="branding-image-container p-4"
+                        onClick={() => openImageModal(initialBrandImage, "Initial Meal University Brand Style Guide - Mascot and Varsity Concept")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <img 
+                          src={initialBrandImage} 
+                          alt="Initial Meal University brand style guide featuring Chefee the dog mascot holding M and U letters, varsity-style wordmark, slogan 'Healthy Food = Healthy Brain', multiple typography styles including Inter, Varsity, and Arial, and darker earth-toned color palette"
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            borderRadius: "12px",
+                            transition: "transform 0.2s ease",
+                            border: "1px solid #e9ecef"
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = "scale(1.02)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = "scale(1)";
+                          }}
+                        />
+                        <div className="text-center mt-2">
+                          <span style={{ 
+                            fontSize: "0.7rem", 
+                            color: "var(--accent-purple)",
+                            display: "inline-block",
+                            padding: "2px 8px",
+                            background: "#f8f9fa",
+                            borderRadius: "20px"
+                          }}>
+                            🔍 Click to enlarge
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-4" style={{ background: "#f8f9fa" }}>
+                        <p className="mb-0" style={{ fontSize: "0.85rem", lineHeight: "1.5", color: "var(--text-body)" }}>
+                          <strong>Features:</strong> Mascot-driven logo (Chefee the dog), varsity-style wordmark, 
+                          multiple typography styles (Inter, Varsity, Arial), darker earth-toned palette. 
+                          <em className="d-block mt-2">Less cohesive and less versatile for modern digital use.</em>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Final Brand Card */}
+                  <div className="col-md-6">
+                    <div className="branding-card h-100" style={{ 
+                      background: "white",
+                      border: "2px solid var(--accent-green)",
+                      borderRadius: "20px",
+                      overflow: "hidden",
+                      boxShadow: "8px 8px 0 var(--shadow-color)",
+                      transition: "all 0.3s ease"
+                    }}>
+                      <div className="p-4" style={{ background: "var(--pastel-mint)", borderBottom: "2px solid var(--accent-green)" }}>
+                        <h5 className="fw-bold mb-0" style={{ fontSize: "1.1rem", color: "var(--text-dark)" }}>
+                          ✨ Final: Meal U
+                        </h5>
+                      </div>
+                      <div 
+                        className="branding-image-container p-4"
+                        onClick={() => openImageModal(finalBrandImage, "Final Meal U Brand Style Guide - Nanum Brush Script, Vibrant Color Palette, and Graduation Cap Detail")}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <img 
+                          src={finalBrandImage} 
+                          alt="Final Meal U brand style guide featuring Nanum Brush Script handwritten typography, fresh vibrant color palette with energetic tones, graduation cap detail integrated into logo, simplified and cohesive brand identity that feels approachable, authentic, and student-centered"
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            borderRadius: "12px",
+                            transition: "transform 0.2s ease",
+                            border: "1px solid #e9ecef"
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = "scale(1.02)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = "scale(1)";
+                          }}
+                        />
+                        <div className="text-center mt-2">
+                          <span style={{ 
+                            fontSize: "0.7rem", 
+                            color: "var(--accent-purple)",
+                            display: "inline-block",
+                            padding: "2px 8px",
+                            background: "#f8f9fa",
+                            borderRadius: "20px"
+                          }}>
+                            🔍 Click to enlarge
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-4" style={{ background: "#f8f9fa" }}>
+                        <p className="mb-0" style={{ fontSize: "0.85rem", lineHeight: "1.5", color: "var(--text-body)" }}>
+                          <strong>Features:</strong> Nanum Brush Script handwritten typography, fresh vibrant color 
+                          palette, graduation cap detail, simplified graphics. 
+                          <em className="d-block mt-2">More refined, cohesive, scalable, and student-centered.</em>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Summary Description */}
+                <div className="mt-4 p-4 rounded-4" style={{ 
+                  background: "linear-gradient(135deg, var(--pastel-yellow), var(--pastel-purple))",
+                  border: "2px solid var(--accent-purple)",
+                  boxShadow: "6px 6px 0 var(--shadow-color)"
+                }}>
+                  <p className="mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.6", color: "var(--text-body)" }}>
+                    <strong>💡 Brand Evolution Summary:</strong> The final Meal U design is more refined, cohesive, and scalable, 
+                    using simplified graphics, a more energetic color palette, and the handwritten Nanum Brush Script style to create 
+                    a stronger emotional connection, clearer brand identity, and a more modern, student-friendly feel. Combined with 
+                    a fresh yet vibrant color palette and the graduation cap detail, the design clearly communicates a fun, nourishing, 
+                    and accessible meal kit tailored to support college students' independence and everyday lifestyles.
+                  </p>
+                </div>
+              </section>
+
+              {/* RESEARCH SECTION - Now includes Persona and Journey Map */}
               <section id="research" className="mb-5 pb-4">
                 <h2 className="text-uppercase small fw-bold mb-4">Research</h2>
 
@@ -572,7 +800,7 @@ function MealU() {
                 </div>
 
                 {/* Key Opportunities */}
-                <div>
+                <div className="mb-5">
                   <h4 className="fw-bold mb-3">Key Opportunities Identified</h4>
                   <div className="row g-3">
                     {[
@@ -598,9 +826,101 @@ function MealU() {
                     ))}
                   </div>
                 </div>
+
+                {/* User Persona - Moved to Research Section */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">User Persona: Barbara</h4>
+                  
+                  <div className="persona-image-container mb-4">
+                    <div 
+                      className="persona-image-wrapper"
+                      onClick={() => openImageModal(userPersonaImage, "User Persona - Barbara, College Student")}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img 
+                        src={userPersonaImage} 
+                        alt="User Persona: Barbara - 19 year old full-time college student living in on-campus dormitory. Goals: graduate college, develop better eating habits, incorporate healthier options. Pain points: skipping meals, limited time, no kitchen access, unhealthy diet."
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          borderRadius: "16px",
+                          transition: "transform 0.2s ease",
+                          border: "2px solid var(--accent-purple)",
+                          boxShadow: "8px 8px 0 var(--shadow-color)"
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.01)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                        }}
+                      />
+                      <div className="text-center mt-2">
+                        <span style={{ 
+                          fontSize: "0.75rem", 
+                          color: "var(--accent-purple)",
+                          display: "inline-block",
+                          padding: "4px 12px",
+                          background: "#f8f9fa",
+                          borderRadius: "20px"
+                        }}>
+                          🔍 Click to enlarge
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* User Journey Map - Moved to Research Section */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">User Journey Map</h4>
+                  <p className="mb-4">
+                    I mapped out Barbara's journey to identify pain points and opportunities throughout her experience 
+                    with Meal U, from discovery to ongoing engagement.
+                  </p>
+                  
+                  <div className="journey-map-container">
+                    <div 
+                      className="journey-map-wrapper"
+                      onClick={() => openImageModal(journeyMapImage, "User Journey Map - Barbara's Meal U Experience")}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img 
+                        src={journeyMapImage} 
+                        alt="User Journey Map showing Barbara's experience with Meal U across 6 stages: Discovery, Sign Up, Meal Selection, Checkout, Delivery, and Ongoing Use. Includes touchpoints, pain points, and opportunities for each stage."
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          borderRadius: "16px",
+                          transition: "transform 0.2s ease",
+                          border: "2px solid var(--accent-green)",
+                          boxShadow: "8px 8px 0 var(--shadow-color)"
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.01)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                        }}
+                      />
+                      <div className="text-center mt-2">
+                        <span style={{ 
+                          fontSize: "0.75rem", 
+                          color: "var(--accent-purple)",
+                          display: "inline-block",
+                          padding: "4px 12px",
+                          background: "#f8f9fa",
+                          borderRadius: "20px"
+                        }}>
+                          🔍 Click to enlarge
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
 
-              {/* DESIGN SECTION */}
+              {/* DESIGN SECTION - Includes IA, User Flows, Core Values, and UI Designs */}
               <section id="design" className="mb-5 pb-4">
                 <h2 className="text-uppercase small fw-bold mb-4">Design</h2>
 
@@ -622,92 +942,238 @@ function MealU() {
                   </div>
                 </div>
 
-                {/* User Persona */}
+                {/* Information Architecture Section - NEW */}
                 <div className="mb-5">
-                  <h4 className="fw-bold mb-3">User Persona: Barbara</h4>
+                  <h4 className="fw-bold mb-3">Information Architecture (IA)</h4>
+                  <p className="mb-4">
+                    Before designing the user flows, I first established the Information Architecture to organize 
+                    how Meal U's content and features would be structured. The IA defines the hierarchy and 
+                    relationship between different sections of the app, ensuring users can easily find what they need.
+                  </p>
                   
-                  <div className="persona-card p-4 rounded-4" style={{ 
-                    background: "white",
-                    border: "2px solid var(--accent-purple)",
-                    boxShadow: "8px 8px 0 var(--shadow-color)"
-                  }}>
-                    <div className="row align-items-center mb-4">
-                      <div className="col-md-3 text-center">
-                        <div className="avatar-placeholder rounded-circle mx-auto" style={{ 
-                          background: "var(--pastel-purple)",
-                          width: "120px",
-                          height: "120px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          margin: "0 auto"
+                  <div className="ia-container">
+                    <div 
+                      className="ia-wrapper"
+                      onClick={() => openImageModal(informationArchitectureImage, "Meal U Information Architecture - Site Structure and Content Organization")}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img 
+                        src={informationArchitectureImage} 
+                        alt="Meal U Information Architecture diagram showing the app's structure including: Home, Meal Selection, Meal Details, Cart, Checkout, Order Confirmation, Account (Profile, Payment Methods, Order History), and Support sections"
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          borderRadius: "16px",
+                          transition: "transform 0.2s ease",
+                          border: "2px solid var(--accent-purple)",
+                          boxShadow: "8px 8px 0 var(--shadow-color)"
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "scale(1.01)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "scale(1)";
+                        }}
+                      />
+                      <div className="text-center mt-2">
+                        <span style={{ 
+                          fontSize: "0.75rem", 
+                          color: "var(--accent-purple)",
+                          display: "inline-block",
+                          padding: "4px 12px",
+                          background: "#f8f9fa",
+                          borderRadius: "20px"
                         }}>
-                          <span style={{ fontSize: "3rem" }}>👩‍🎓</span>
+                          🔍 Click to enlarge
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* User Flows Section - NEW */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">User Flows</h4>
+                  <p className="mb-4">
+                    Based on the Information Architecture, I mapped out the key user flows showing how users 
+                    navigate through Meal U to complete their goals. The primary flow follows a user's journey 
+                    from account creation to meal selection, checkout, and order confirmation.
+                  </p>
+                  
+                  <div className="row g-4">
+                    {/* User Flow 1 */}
+                    <div className="col-md-6">
+                      <div className="userflow-card h-100" style={{ 
+                        background: "white",
+                        border: "2px solid var(--accent-pink)",
+                        borderRadius: "20px",
+                        overflow: "hidden",
+                        boxShadow: "8px 8px 0 var(--shadow-color)",
+                        transition: "all 0.3s ease"
+                      }}>
+                        <div className="p-3" style={{ background: "var(--pastel-pink)", borderBottom: "2px solid var(--accent-pink)" }}>
+                          <h5 className="fw-bold mb-0" style={{ fontSize: "1rem", color: "var(--text-dark)" }}>
+                            📍 User Flow: Account Creation → Meal Selection
+                          </h5>
+                        </div>
+                        <div 
+                          className="userflow-image-container p-3"
+                          onClick={() => openImageModal(userFlowImage, "Meal U User Flow - Account Creation to Meal Selection")}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <img 
+                            src={userFlowImage} 
+                            alt="User flow diagram showing the path from account creation and onboarding through browsing meals, filtering options, and selecting a meal to add to cart"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              borderRadius: "12px",
+                              transition: "transform 0.2s ease",
+                              border: "1px solid #e9ecef"
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = "scale(1.02)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = "scale(1)";
+                            }}
+                          />
+                          <div className="text-center mt-2">
+                            <span style={{ 
+                              fontSize: "0.7rem", 
+                              color: "var(--accent-purple)",
+                              display: "inline-block",
+                              padding: "2px 8px",
+                              background: "#f8f9fa",
+                              borderRadius: "20px"
+                            }}>
+                              🔍 Click to enlarge
+                            </span>
+                          </div>
                         </div>
                       </div>
-                      <div className="col-md-9">
-                        <h5 className="fw-bold mb-2" style={{ fontSize: "1.5rem", color: "var(--text-dark)" }}>Barbara</h5>
-                        <p className="mb-1" style={{ fontSize: "1rem", color: "var(--text-body)" }}>19 years • Full-time College Student</p>
-                        <p className="mb-3" style={{ fontSize: "1rem", color: "var(--text-body)" }}>On-campus dormitory</p>
-                      </div>
                     </div>
-                    
-                    <div className="row g-4">
-                      <div className="col-md-6">
-                        <h6 className="fw-bold mb-3" style={{ fontSize: "1rem", color: "var(--accent-purple)" }}>🎯 Goals</h6>
-                        <ul className="custom-list">
-                          <li>Graduate college with a degree of her choice</li>
-                          <li>Develop better eating habits</li>
-                          <li>Incorporate healthier options without compromising time and money</li>
-                        </ul>
+
+                    {/* User Flow 2 */}
+                    <div className="col-md-6">
+                      <div className="userflow-card h-100" style={{ 
+                        background: "white",
+                        border: "2px solid var(--accent-green)",
+                        borderRadius: "20px",
+                        overflow: "hidden",
+                        boxShadow: "8px 8px 0 var(--shadow-color)",
+                        transition: "all 0.3s ease"
+                      }}>
+                        <div className="p-3" style={{ background: "var(--pastel-mint)", borderBottom: "2px solid var(--accent-green)" }}>
+                          <h5 className="fw-bold mb-0" style={{ fontSize: "1rem", color: "var(--text-dark)" }}>
+                            ✅ User Flow: Checkout → Order Confirmation
+                          </h5>
+                        </div>
+                        <div 
+                          className="userflow-image-container p-3"
+                          onClick={() => openImageModal(userFlow2Image, "Meal U User Flow - Checkout to Order Confirmation")}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <img 
+                            src={userFlow2Image} 
+                            alt="User flow diagram showing the checkout process including cart review, payment method selection, shipping address entry, order submission, and final order confirmation with order number"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              borderRadius: "12px",
+                              transition: "transform 0.2s ease",
+                              border: "1px solid #e9ecef"
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = "scale(1.02)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = "scale(1)";
+                            }}
+                          />
+                          <div className="text-center mt-2">
+                            <span style={{ 
+                              fontSize: "0.7rem", 
+                              color: "var(--accent-purple)",
+                              display: "inline-block",
+                              padding: "2px 8px",
+                              background: "#f8f9fa",
+                              borderRadius: "20px"
+                            }}>
+                              🔍 Click to enlarge
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="col-md-6">
-                        <h6 className="fw-bold mb-3" style={{ fontSize: "1rem", color: "var(--accent-pink)" }}>😣 Pain Points</h6>
-                        <ul className="custom-list">
-                          <li>Skipping meals due to rigorous course schedule</li>
-                          <li>Limited time for extracurricular activities</li>
-                          <li>No access to kitchen utensils or appliances</li>
-                          <li>Unhealthy diet: potato chips, pizza, soda, ramen</li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-4 p-3 rounded-4" style={{ 
-                      background: "var(--pastel-yellow)",
-                      border: "2px solid var(--accent-yellow)"
-                    }}>
-                      <h6 className="fw-bold mb-2" style={{ fontSize: "0.9rem", color: "var(--text-dark)" }}>📝 Key Behaviors</h6>
-                      <ul className="mb-0" style={{ fontSize: "0.85rem", color: "var(--text-body)" }}>
-                        <li>Spends most days studying in dorm room</li>
-                        <li>Eats only 1-2 meals daily</li>
-                        <li>Orders UberEats due to tight schedule</li>
-                      </ul>
                     </div>
                   </div>
                 </div>
 
                 {/* UI Design Concepts */}
                 <div>
-                  <h4 className="fw-bold mb-3">UI Design Concepts</h4>
+                  <h4 className="fw-bold mb-3">UX/UI Final Design Concepts</h4>
+                  <p className="mb-4">
+                    I designed these key screens to address the specific needs of college students, focusing on 
+                    affordability, convenience, and ease of use.
+                  </p>
                   
-                  <div className="row g-3">
-                    {[
-                      { title: "Onboarding Flow", desc: "Welcome screen with student-focused messaging", emoji: "👋" },
-                      { title: "Meal Selection", desc: "Filter by dietary preferences, time, and budget", emoji: "🍽️" },
-                      { title: "Personalization", desc: "Ingredient substitution options", emoji: "🎨" },
-                      { title: "Rewards System", desc: "Points for consistent ordering and referrals", emoji: "⭐" },
-                      { title: "Account Management", desc: "Subscription settings and delivery scheduling", emoji: "👤" },
-                      { title: "Customer Support", desc: "In-app chat and help center", emoji: "💬" }
-                    ].map((design, index) => (
-                      <div className="col-md-6 col-lg-4" key={index}>
-                        <div className="ui-card h-100 p-4 rounded-4 text-center" style={{ 
+                  <div className="row g-4">
+                    {uiDesigns.map((design, index) => (
+                      <div className="col-md-6" key={index}>
+                        <div className="ui-design-card h-100" style={{ 
                           background: "white",
                           border: "2px solid var(--accent-purple)",
-                          boxShadow: "6px 6px 0 var(--shadow-color)"
+                          borderRadius: "20px",
+                          overflow: "hidden",
+                          boxShadow: "6px 6px 0 var(--shadow-color)",
+                          transition: "all 0.3s ease"
                         }}>
-                          <span style={{ fontSize: "2.5rem" }}>{design.emoji}</span>
-                          <h5 className="fw-bold mt-2" style={{ fontSize: "1rem", color: "var(--text-dark)" }}>{design.title}</h5>
-                          <p className="mb-0" style={{ fontSize: "0.8rem", color: "var(--text-body)" }}>{design.desc}</p>
+                          {/* Image Section */}
+                          <div 
+                            className="ui-design-image-container"
+                            onClick={() => openImageModal(design.image, `${design.title} - Meal U UI Design`)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            <img 
+                              src={design.image} 
+                              alt={design.alt}
+                              style={{
+                                width: "100%",
+                                height: "250px",
+                                objectFit: "cover",
+                                objectPosition: "top",
+                                display: "block",
+                                transition: "transform 0.2s ease"
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = "scale(1.02)";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = "scale(1)";
+                              }}
+                            />
+                          </div>
+                          
+                          {/* Text Section */}
+                          <div className="p-4 text-center">
+                            <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
+                              <span style={{ fontSize: "1.5rem" }}>{design.emoji}</span>
+                              <h5 className="fw-bold mb-0" style={{ fontSize: "1rem", color: "var(--text-dark)" }}>{design.title}</h5>
+                            </div>
+                            <p className="mb-0" style={{ fontSize: "0.85rem", color: "var(--text-body)" }}>{design.desc}</p>
+                            <div className="mt-2">
+                              <span style={{ 
+                                fontSize: "0.7rem", 
+                                color: "var(--accent-purple)",
+                                display: "inline-block",
+                                padding: "2px 8px",
+                                background: "#f8f9fa",
+                                borderRadius: "20px"
+                              }}>
+                                🔍 Click to enlarge
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -724,7 +1190,7 @@ function MealU() {
                     { number: "42", label: "Survey respondents", color: "#9a4b97" },
                     { number: "9", label: "Key research themes", color: "#4a7c6b" },
                     { number: "5", label: "Competitors analyzed", color: "#e49c00" },
-                    { number: "1", label: "Student-focused solution", color: "#c863be" }
+                    { number: "4", label: "Team members", color: "#c863be" }
                   ].map((item, index) => (
                     <div className="col-md-3" key={index}>
                       <div className="result-card p-4 rounded-4" style={{ 
