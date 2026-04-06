@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import project images
-import wcagImage from '../assets/Wcag-images/WCAGmainhero.png';
-import timeManagementImage from '../assets/Timemgmt.png';
+import wcagImage from '../assets/WCAG-images/WCAGmainhero.png';
+import timeManagementImage from '../assets/Timemgmt-images/Timemgmt.png';
 import rootsSoilImage from "../assets/Capstone-images/Capstonehero.png";
+import secureleafImage from "../assets/Secureleaf-images/SecureleafHero.png";
+import mealUImage from "../assets/MealU-images/MealUHero.png";
+import lechaletImage from "../assets/Lechaletbymay-images/Lechaletbymay.png";
+import reactWeatherImage from "../assets/Reactweather-images/Reactweatherhero.png";
 
 function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
   
@@ -31,6 +35,26 @@ function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
       tags: ["UX Design", "eLearning", "Productivity"]
     },
     {
+      id: "mealu",
+      title: "Meal U: Student Meal Delivery",
+      category: "ux",
+      image: mealUImage,
+      alt: "Meal U - Affordable meal delivery for college students",
+      description: "Student-focused meal delivery service with affordable pricing, 5-step easy meals, and personalized options designed for dorm living.",
+      link: "/meal-u",
+      tags: ["UX Design", "User Research", "Brand Design", "Mobile App"]
+    },
+    {
+      id: "secureleaf",
+      title: "SecureLeaf: Bank Loan Application",
+      category: "ux",
+      image: secureleafImage,
+      alt: "SecureLeaf - Bank loan application",
+      description: "A mobile-first bank loan application transforming complex paper forms into an intuitive digital experience with step-by-step guidance.",
+      link: "/secureleaf",
+      tags: ["UX Design", "Brand Design", "Mobile App", "User Research"]
+    },
+    {
       id: "roots-soil",
       title: "Roots & Soil – Full-Stack E-Commerce",
       category: "fullstack",
@@ -41,25 +65,25 @@ function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
       tags: ["React", "Node.js", "MongoDB", "Stripe", "Full-Stack"]
     },
     {
-      id: "react",
-      title: "React Web App",
+      id: "lechalet",
+      title: "Le Chalet by May",
       category: "frontend",
-      image: "https://via.placeholder.com/400x250",
-      alt: "React Project",
-      description: "Responsive application built with React and Bootstrap.",
-      link: "/",
-      tags: ["React", "Frontend", "Bootstrap"]
+      image: lechaletImage,
+      alt: "Le Chalet by May Shopify redesign",
+      description: "Custom Shopify redesign with hard-coded menu, wishlist, and mobile-first design.",
+      link: "/le-chalet-by-may",
+      tags: ["Shopify", "Front-End", "E-Commerce", "Custom Development"]
     },
     {
-      id: "frontend",
-      title: "Frontend Redesign",
+      id: "react",
+      title: "React Weather App",
       category: "frontend",
-      image: "https://via.placeholder.com/400x250",
-      alt: "Frontend Project",
-      description: "Improved layout, performance, and accessibility.",
-      link: "/",
-      tags: ["HTML", "CSS", "JavaScript"]
-    },
+      image: reactWeatherImage,
+      alt: "React Weather App with 5-day forecast",
+      description: "A responsive weather application built with React that displays real-time weather data, 5-day forecast, and location search.",
+      link: "/react-weather",
+      tags: ["React", "API Integration", "Front-End", "OpenWeatherMap"]
+    }
   ];
 
   // Filter projects based on selected tab and exclude specified project if any

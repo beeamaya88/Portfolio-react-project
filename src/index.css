@@ -581,8 +581,8 @@
 }
 
 .project-card .btn-dark {
-  font-size: 0.85rem;
-  padding: 0.5rem;
+  font-size: 1rem;  /* Increased from 0.85rem for better accessibility */
+  padding: 0.6rem 0.5rem;  /* Slightly increased padding */
   background: #ffffff;
   border: 2px solid var(--border-black);
   color: var(--text-dark);
@@ -590,10 +590,12 @@
   transition: all 0.3s ease;
   margin-top: auto;
   width: 100%;
+  font-weight: 500;  /* Added for better readability */
+  cursor: pointer;
 }
 
 .project-card .btn-dark:hover {
-  background: var(--accent-green);
+  background: #4a7c6b;  /* Darker green instead of var(--accent-green) */
   transform: translateY(-2px);
   color: white;
   border-color: var(--border-black);
@@ -1795,5 +1797,121 @@ iframe {
   .hero-static-background {
     background-size: cover;
     background-position: center 30%;
+  }
+}
+/* ============================================
+   LARGE DESKTOP STYLES (1280px and above)
+   ============================================ */
+
+/* Make content wider to align with logo */
+@media (min-width: 1280px) {
+  /* Hero section content wider */
+  .hero-content {
+    max-width: 1200px;
+  }
+  
+  .hero-content p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Projects section - wider container */
+  .projects-section .container {
+    max-width: 1280px;
+  }
+  
+  /* Project cards - 3 per row on large desktop */
+  .projects-section .col-md-6 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  
+  /* Process section wider */
+  .process-section .container {
+    max-width: 1280px;
+  }
+  
+  /* Playground section wider */
+  .playground-section .container {
+    max-width: 1280px;
+  }
+  
+  /* Footer section wider */
+  .footer-section .container {
+    max-width: 1280px;
+  }
+  
+  /* Adjust project card heights for better fit */
+  .project-image-container {
+    height: 220px;
+  }
+  
+  .project-card h6 {
+    min-height: 40px;
+    font-size: 1rem;
+  }
+  
+  .project-card .text-muted {
+    font-size: 0.8rem;
+  }
+  
+  .small-tag {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+  
+  .project-card .btn-dark {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+}
+
+/* For very large screens (1600px and above) */
+@media (min-width: 1600px) {
+  .projects-section .container {
+    max-width: 1400px;
+  }
+  
+  .project-image-container {
+    height: 240px;
+  }
+}
+
+/* Ensure the 3-column layout works properly */
+@media (min-width: 1280px) {
+  .projects-section .row.g-4 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  
+  .projects-section [class*="col-"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Make project cards more compact for 3 in a row */
+  .project-card .p-3 {
+    padding: 1rem;
+  }
+  
+  .project-card h6 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .project-card .text-muted {
+    font-size: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .small-tag {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+  }
+  
+  .project-card .btn-dark {
+    font-size: 1rem;
+    padding: 0.4rem;
   }
 }
