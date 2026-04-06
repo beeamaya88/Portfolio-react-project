@@ -11,7 +11,7 @@ import RootsSoilProject from "./pages/RootsSoil";
 import Secureleaf from "./pages/Secureleaf";
 
 // Import project images
-import wcagHeroImage from "./assets/WCAG-images/Wcagmainhero.png";
+import wcagHeroImage from "./assets/WCAG-images/WCAGmainhero.png";
 import timeManagementImage from "./assets/Timemgmt-images/Timemgmt.png";
 import mealUHeroImage from "./assets/MealU-images/MealUHero.png";
 import reactWeatherHeroImage from "./assets/Reactweather-images/Reactweatherhero.png"; 
