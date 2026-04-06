@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 // Import the hero image from assets
-import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
+import wcagHeroImage from "../assets/WCAG-images/wcagmainhero.png";
 // Import hero video
 import wcagHeroVideo from "../videos/Wcagherovid.mp4";
 // Import the final logo (SVG)

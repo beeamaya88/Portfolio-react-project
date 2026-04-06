@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import aboutImage from "../assets/About-me-image.JPG";
+import aboutImage from "../assets/About-me-image.JPG?url";
 // Import other project images for other projects section
 import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
 import timeManagementImage from "../assets/Timemgmt-images/Timemgmt.png";
