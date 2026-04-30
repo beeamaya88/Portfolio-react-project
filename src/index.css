@@ -446,7 +446,7 @@
   
   .hero-content .btn-lg {
     width: auto;
-    max-width: 150;
+    max-width: 150px;
     min-width: 130px;
     padding: 0.45rem 0.8rem;
     font-size: 0.8rem;
@@ -528,18 +528,25 @@
 }
 
 .project-image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
   overflow: hidden;
-  height: 200px;
   flex-shrink: 0;
   background-color: #f8f9fa;
 }
 
 .project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Shows entire image */
   object-position: center;
   transition: transform 0.3s ease;
+  background-color: #f8f9fa;
+  padding: 8px; /* Adds breathing room */
 }
 
 .project-card:hover .project-image {
@@ -581,8 +588,8 @@
 }
 
 .project-card .btn-dark {
-  font-size: 1rem;  /* Increased from 0.85rem for better accessibility */
-  padding: 0.6rem 0.5rem;  /* Slightly increased padding */
+  font-size: 1rem;
+  padding: 0.6rem 0.5rem;
   background: #ffffff;
   border: 2px solid var(--border-black);
   color: var(--text-dark);
@@ -590,12 +597,12 @@
   transition: all 0.3s ease;
   margin-top: auto;
   width: 100%;
-  font-weight: 500;  /* Added for better readability */
+  font-weight: 500;
   cursor: pointer;
 }
 
 .project-card .btn-dark:hover {
-  background: #4a7c6b;  /* Darker green instead of var(--accent-green) */
+  background: #4a7c6b;
   transform: translateY(-2px);
   color: white;
   border-color: var(--border-black);
@@ -1521,7 +1528,7 @@ iframe {
     background: transparent;
     border: none;
     padding: 10px 16px;
-    border-radius: 12px;
+    borderRadius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     color: var(--text-dark);
@@ -1605,6 +1612,91 @@ iframe {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+}
+
+/* ============================================
+   IMAGE MODAL STYLES (for Daily Journal)
+   ============================================ */
+
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.image-modal-content {
+  max-width: 85vw;
+  max-height: 85vh;
+  background-color: white;
+  border-radius: 20px;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.image-modal-close:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+.image-modal-inner {
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.image-modal-title {
+  margin: 0 0 16px 0;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+}
+
+.image-modal-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.image-modal-footer {
+  margin: 16px 0 0 0;
+  color: var(--text-body);
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ============================================
@@ -1769,7 +1861,7 @@ iframe {
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero-static-background {
     background-size: contain;
-    background-position: centert;
+    background-position: center;
     background-color: #f5f5f5;
   }
 }
@@ -1799,6 +1891,7 @@ iframe {
     background-position: center 30%;
   }
 }
+
 /* ============================================
    LARGE DESKTOP STYLES (1280px and above)
    ============================================ */

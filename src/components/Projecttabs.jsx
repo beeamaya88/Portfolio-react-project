@@ -10,6 +10,12 @@ import mealUImage from "../assets/MealU-images/MealUHero.png";
 import lechaletImage from "../assets/Lechaletbymay-images/Lechaletbymay.png";
 import reactWeatherImage from "../assets/Reactweather-images/Reactweatherhero.png";
 
+// Import print images
+import ecigPosterImage from '../assets/Printed-images/Kokwellposter.svg';
+import quickguideImage from '../assets/Printed-images/Quickguidecover.svg';
+import sacredPamphletImage from '../assets/Printed-images/Sacredpamphletcover.svg';
+import dailyJournalImage from '../assets/Printed-images/Dailyjournal.svg';
+
 function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
   
   // Define all projects
@@ -57,7 +63,7 @@ function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
     {
       id: "roots-soil",
       title: "Roots & Soil – Full-Stack E-Commerce",
-      category: "fullstack",
+      category: "frontend",
       image: rootsSoilImage,
       alt: "Roots & Soil plant shop e-commerce platform",
       description: "A full-stack e-commerce platform with JWT authentication, product search, shopping cart, Stripe payments, and admin dashboard. Built with React, Node.js, MongoDB.",
@@ -83,24 +89,57 @@ function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
       description: "A responsive weather application built with React that displays real-time weather data, 5-day forecast, and location search.",
       link: "/react-weather",
       tags: ["React", "API Integration", "Front-End", "OpenWeatherMap"]
+    },
+    {
+      id: "ecig-poster",
+      title: "Ecig Poster",
+      category: "print",
+      image: ecigPosterImage,
+      alt: "Ecig Poster design",
+      description: "Bold and informative poster design for ecig awareness campaign.",
+      link: "/print/ecig-poster",
+      tags: ["Print Design", "Poster", "Layout"]
+    },
+    {
+      id: "quickguide",
+      title: "Quick Quit Pocket Booklet",
+      category: "print",
+      image: quickguideImage,
+      alt: "Quick quit pocket booklet cover",
+      description: "Compact, user-friendly pocket guide for smoking cessation support.",
+      link: "/print/quickguide",
+      tags: ["Booklet", "Print", "Information Design"]
+    },
+    {
+      id: "sacred-tobacco",
+      title: "Sacred Tobacco Pamphlet",
+      category: "print",
+      image: sacredPamphletImage,
+      alt: "Sacred Tobacco pamphlet cover",
+      description: "Culturally respectful pamphlet design covering traditional tobacco use.",
+      link: "/print/sacred-tobacco",
+      tags: ["Pamphlet", "Print", "Editorial"]
+    },
+    {
+      id: "daily-journal",
+      title: "Daily Check-in Journal",
+      category: "print",
+      image: dailyJournalImage,
+      alt: "Daily Check-in Journal cover",
+      description: "A supportive journal for people who are thinking about or have recently quit commercial tobacco, helping them manage cravings and track their goals.",
+      link: "/print/daily-journal",
+      tags: ["Journal", "Print", "Wellness", "Mental Health"]
     }
   ];
 
   // Filter projects based on selected tab and exclude specified project if any
   const filteredProjects = allProjects.filter(project => {
-    // Filter by tab
-    if (projectTab === "ux" && project.category !== "ux") {
-      return false;
-    }
-    if (projectTab === "frontend" && project.category !== "frontend" && project.category !== "fullstack") {
-      return false;
-    }
-    if (projectTab === "all" && excludeProject && project.id === excludeProject) {
-      return false;
-    }
     if (projectTab === "all") {
-      return true;
+      return !excludeProject || project.id !== excludeProject;
     }
+    if (projectTab === "ux") return project.category === "ux";
+    if (projectTab === "frontend") return project.category === "frontend";
+    if (projectTab === "print") return project.category === "print";
     return true;
   });
 
@@ -130,6 +169,14 @@ function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
             onClick={() => setProjectTab("frontend")}
           >
             Development
+          </button>
+        </li>
+        <li className="nav-item">
+          <button
+            className={`nav-link ${projectTab === "print" ? "active" : ""}`}
+            onClick={() => setProjectTab("print")}
+          >
+            Print
           </button>
         </li>
       </ul>

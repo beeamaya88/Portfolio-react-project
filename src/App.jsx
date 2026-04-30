@@ -9,6 +9,10 @@ import Navbar from "./components/Navbar";
 import Lechaletbymay from "./pages/Lechaletbymay";
 import RootsSoilProject from "./pages/RootsSoil";
 import Secureleaf from "./pages/Secureleaf";
+import Dailyjournal from "./pages/Dailyjournal";
+import Ecigposter from "./pages/Ecigposter";
+import Quickquitbooklet from "./pages/Quickquitbooklet";
+import Sacredtobaccopamphlet from "./pages/Sacredtobaccopamphlet";
 
 // Import project images
 import wcagHeroImage from "./assets/WCAG-images/WCAGmainhero.png";
@@ -18,6 +22,13 @@ import reactWeatherHeroImage from "./assets/Reactweather-images/Reactweatherhero
 import lechaletHeroImage from "./assets/Lechaletbymay-images/Lechaletbymay.png";
 import rootsSoilImage from "./assets/Capstone-images/Capstonehero.png";
 import secureleafHeroImage from "./assets/Secureleaf-images/SecureleafHero.png";
+
+// Import print project images
+import ecigPosterImage from "./assets/Printed-images/Kokwellposter.svg";
+import quickguideImage from "./assets/Printed-images/Quickguidecover.svg";
+import sacredPamphletImage from "./assets/Printed-images/Sacredpamphletcover.svg";
+import dailyJournalImage from "./assets/Printed-images/Dailyjournal.svg";
+
 // Import hero video and static hero image
 import portfolioHeroVideo from "./videos/Portfolioherovid.mp4";
 import heroStaticImage from "./assets/Home-images/Heroimage.png";
@@ -147,6 +158,45 @@ function App() {
     }
   ];
 
+  const printProjects = [
+    {
+      id: "ecig-poster",
+      title: "Ecig Poster",
+      image: ecigPosterImage,
+      alt: "Ecig Poster design",
+      description: "Bold and informative poster design for ecig awareness campaign.",
+      tags: ["Print Design", "Poster", "Layout"],
+      link: "/print/ecig-poster"
+    },
+    {
+      id: "quickguide",
+      title: "Quick Quit Pocket Booklet",
+      image: quickguideImage,
+      alt: "Quick quit pocket booklet cover",
+      description: "Compact, user-friendly pocket guide for smoking cessation support.",
+      tags: ["Booklet", "Print", "Information Design"],
+      link: "/print/quickguide"
+    },
+    {
+      id: "sacred-tobacco",
+      title: "Sacred Tobacco Pamphlet",
+      image: sacredPamphletImage,
+      alt: "Sacred Tobacco pamphlet cover",
+      description: "Culturally respectful pamphlet design covering traditional tobacco use.",
+      tags: ["Pamphlet", "Print", "Editorial"],
+      link: "/print/sacred-tobacco"
+    },
+    {
+      id: "daily-journal",
+      title: "Daily Check-in Journal",
+      image: dailyJournalImage,
+      alt: "Daily Check-in Journal cover",
+      description: "A supportive journal for people who are thinking about or have recently quit commercial tobacco, helping them manage cravings and track their goals.",
+      tags: ["Journal", "Print", "Wellness", "Mental Health"],
+      link: "/print/daily-journal"
+    }
+  ];
+
   return (
     <Router>
       <Routes>
@@ -231,126 +281,176 @@ function App() {
                 </div>
               </section>
 
-                        {/* PROJECTS SECTION - WITH GRADIENT BACKGROUND */}
-          <section id="projects" className="projects-section py-5" style={{ 
-            background: "linear-gradient(135deg, #e8f0fe 0%, #f5e6f5 50%, #fff0e0 100%)"
-          }}>
-            <div className="container">
-              {/* Title row */}
-              <div className="row justify-content-center">
-                <div className="col-lg-8">
-                  <h2 className="text-uppercase small fw-bold mb-4">My Work</h2>
-                  <p className="fs-3 fw-light mb-5">
-                    From accessible platforms 
-                    to interactive learning experiences and web applications, check out my work!
-                  </p>
-                </div>
-              </div>
+              {/* PROJECTS SECTION - WITH GRADIENT BACKGROUND */}
+              <section id="projects" className="projects-section py-5" style={{ 
+                background: "linear-gradient(135deg, #e8f0fe 0%, #f5e6f5 50%, #fff0e0 100%)"
+              }}>
+                <div className="container">
+                  {/* Title row */}
+                  <div className="row justify-content-center">
+                    <div className="col-lg-8">
+                      <h2 className="text-uppercase small fw-bold mb-4">My Work</h2>
+                      <p className="fs-3 fw-light mb-5">
+                        From accessible platforms 
+                        to interactive learning experiences and web applications, check out my work!
+                      </p>
+                    </div>
+                  </div>
 
-              {/* Project Type Tabs */}
-              <div className="row justify-content-center mb-5">
-                <div className="col-lg-8">
-                  <div className="d-flex gap-3">
-                    <button
-                      className={`btn ${activeProjectTab === 'ux' ? 'btn-dark' : 'btn-outline-dark'} px-4 py-2 rounded-pill`}
-                      onClick={() => setActiveProjectTab('ux')}
-                      aria-label="Show UX design projects"
-                    >
-                      UX Design
-                    </button>
-                    <button
-                      className={`btn ${activeProjectTab === 'dev' ? 'btn-dark' : 'btn-outline-dark'} px-4 py-2 rounded-pill`}
-                      onClick={() => setActiveProjectTab('dev')}
-                      aria-label="Show development projects"
-                    >
-                      Development
-                    </button>
+                  {/* Project Type Tabs */}
+                  <div className="row justify-content-center mb-5">
+                    <div className="col-lg-8">
+                      <div className="d-flex gap-3">
+                        <button
+                          className={`btn ${activeProjectTab === 'ux' ? 'btn-dark' : 'btn-outline-dark'} px-4 py-2 rounded-pill`}
+                          onClick={() => setActiveProjectTab('ux')}
+                          aria-label="Show UX design projects"
+                        >
+                          UX Design
+                        </button>
+                        <button
+                          className={`btn ${activeProjectTab === 'dev' ? 'btn-dark' : 'btn-outline-dark'} px-4 py-2 rounded-pill`}
+                          onClick={() => setActiveProjectTab('dev')}
+                          aria-label="Show development projects"
+                        >
+                          Development
+                        </button>
+                        <button
+                          className={`btn ${activeProjectTab === 'print' ? 'btn-dark' : 'btn-outline-dark'} px-4 py-2 rounded-pill`}
+                          onClick={() => setActiveProjectTab('print')}
+                          aria-label="Show print projects"
+                        >
+                          Print
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Project Cards - Responsive grid: 1 on mobile, 2 on tablet, 3 on desktop */}
+                  <div className="row justify-content-center">
+                    <div className="col-12">
+                      <div className="row g-4">
+                        {/* UX Projects */}
+                        {activeProjectTab === 'ux' && (
+                          <>
+                            {uxProjects.map((project) => (
+                              <div className="col-md-6 col-xl-4" key={project.id}>
+                                <div className="project-card">
+                                  <div className="project-image-container">
+                                    <img 
+                                      src={project.image} 
+                                      className="project-image w-100" 
+                                      alt={project.alt}
+                                    />
+                                  </div>
+                                  <div className="p-3">
+                                    <h6 className="fw-bold mb-2">{project.title}</h6>
+                                    <p className="text-muted small mb-2">{project.description}</p>
+                                    <div className="d-flex flex-wrap gap-1 mb-3">
+                                      {project.tags.map((tag) => (
+                                        <span key={tag} className="badge bg-light text-dark small-tag">
+                                          {tag}
+                                        </span>
+                                      ))}
+                                    </div>
+                                    <button 
+                                      className="btn btn-dark btn-sm w-100 py-2 rounded-pill"
+                                      onClick={() => window.location.href = project.link}
+                                      aria-label={`View case study for ${project.title}`}
+                                    >
+                                      View Case Study →
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </>
+                        )}
+
+                        {/* Dev Projects */}
+                        {activeProjectTab === 'dev' && (
+                          <>
+                            {devProjects.map((project) => (
+                              <div className="col-md-6 col-xl-4" key={project.id}>
+                                <div className="project-card">
+                                  <div className="project-image-container">
+                                    <img 
+                                      src={project.image} 
+                                      className="project-image w-100" 
+                                      alt={project.alt}
+                                    />
+                                  </div>
+                                  <div className="p-3">
+                                    <h6 className="fw-bold mb-2">{project.title}</h6>
+                                    <p className="text-muted small mb-2">{project.description}</p>
+                                    <div className="d-flex flex-wrap gap-1 mb-3">
+                                      {project.tags.map((tag) => (
+                                        <span key={tag} className="badge bg-light text-dark small-tag">
+                                          {tag}
+                                        </span>
+                                      ))}
+                                    </div>
+                                    <button 
+                                      className="btn btn-dark btn-sm w-100 py-2 rounded-pill"
+                                      onClick={() => window.location.href = project.link}
+                                      aria-label={`View project for ${project.title}`}
+                                    >
+                                      View Project →
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </>
+                        )}
+
+                        {/* Print Projects */}
+                        {activeProjectTab === 'print' && (
+                          <>
+                            {printProjects.map((project) => (
+                              <div className="col-md-6 col-xl-4" key={project.id}>
+                                <div className="project-card">
+                                  <div className="project-image-container">
+                                    <img 
+                                      src={project.image} 
+                                      className="project-image w-100" 
+                                      alt={project.alt}
+                                    />
+                                  </div>
+                                  <div className="p-3">
+                                    <h6 className="fw-bold mb-2">{project.title}</h6>
+                                    <p className="text-muted small mb-2">{project.description}</p>
+                                    <div className="d-flex flex-wrap gap-1 mb-3">
+                                      {project.tags.map((tag) => (
+                                        <span key={tag} className="badge bg-light text-dark small-tag">
+                                          {tag}
+                                        </span>
+                                      ))}
+                                    </div>
+                                    <button 
+                                      className="btn btn-dark btn-sm w-100 py-2 rounded-pill"
+                                      onClick={() => {
+                                        if (project.link === "#") {
+                                          alert("Project details coming soon!");
+                                        } else {
+                                          window.location.href = project.link;
+                                        }
+                                      }}
+                                      aria-label={`View project for ${project.title}`}
+                                    >
+                                      View Project →
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Project Cards - Responsive grid: 1 on mobile, 2 on tablet, 3 on desktop */}
-              <div className="row justify-content-center">
-                <div className="col-12">
-                  <div className="row g-4">
-                    {/* UX Projects */}
-                    {activeProjectTab === 'ux' && (
-                      <>
-                        {uxProjects.map((project) => (
-                          <div className="col-md-6 col-xl-4" key={project.id}>
-                            <div className="project-card">
-                              <div className="project-image-container">
-                                <img 
-                                  src={project.image} 
-                                  className="project-image w-100" 
-                                  alt={project.alt}
-                                />
-                              </div>
-                              <div className="p-3">
-                                <h6 className="fw-bold mb-2">{project.title}</h6>
-                                <p className="text-muted small mb-2">{project.description}</p>
-                                <div className="d-flex flex-wrap gap-1 mb-3">
-                                  {project.tags.map((tag) => (
-                                    <span key={tag} className="badge bg-light text-dark small-tag">
-                                      {tag}
-                                    </span>
-                                  ))}
-                                </div>
-                                <button 
-                                  className="btn btn-dark btn-sm w-100 py-2 rounded-pill"
-                                  onClick={() => window.location.href = project.link}
-                                  aria-label={`View case study for ${project.title}`}
-                                >
-                                  View Case Study →
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </>
-                    )}
-
-                    {/* Dev Projects */}
-                    {activeProjectTab === 'dev' && (
-                      <>
-                        {devProjects.map((project) => (
-                          <div className="col-md-6 col-xl-4" key={project.id}>
-                            <div className="project-card">
-                              <div className="project-image-container">
-                                <img 
-                                  src={project.image} 
-                                  className="project-image w-100" 
-                                  alt={project.alt}
-                                />
-                              </div>
-                              <div className="p-3">
-                                <h6 className="fw-bold mb-2">{project.title}</h6>
-                                <p className="text-muted small mb-2">{project.description}</p>
-                                <div className="d-flex flex-wrap gap-1 mb-3">
-                                  {project.tags.map((tag) => (
-                                    <span key={tag} className="badge bg-light text-dark small-tag">
-                                      {tag}
-                                    </span>
-                                  ))}
-                                </div>
-                                <button 
-                                  className="btn btn-dark btn-sm w-100 py-2 rounded-pill"
-                                  onClick={() => window.location.href = project.link}
-                                  aria-label={`View project for ${project.title}`}
-                                >
-                                  View Project →
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+              </section>
 
               {/* PROCESS SECTION - WITH GRADIENT BACKGROUND */}
               <section id="process" className="process-section py-5" style={{ 
@@ -466,6 +566,18 @@ function App() {
 
         {/* SecureLeaf Project Page */}
         <Route path="/secureleaf" element={<Secureleaf />} />
+
+        {/* Daily Check-in Journal Page */}
+        <Route path="/print/daily-journal" element={<Dailyjournal />} />\
+
+        {/* E-cig Poster and postcard */}
+        <Route path="/print/ecig-poster" element={<Ecigposter />} />
+
+        {/* Quick quit guide booklet */}
+        <Route path="/print/quickguide" element={<Quickquitbooklet />} />
+
+        {/* Sacred Tobacco Pamphlet */}
+        <Route path="/print/sacred-tobacco" element={<Sacredtobaccopamphlet />} />
 
         {/* About Page */}
         <Route path="/about-page" element={<About />} />
