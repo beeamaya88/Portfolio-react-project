@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 // Import booklet images
 import bookletCover from "../assets/Printed-images/Quickquit-images/QBcover.svg";
-import qbPart1 from "../assets/Printed-images/Quickquit-images/QBpart1.svg";
+import qbPart1 from "../assets/Printed-images/Quickquit-images/QBPart1.svg";
 import qbPart2 from "../assets/Printed-images/Quickquit-images/QBpart2.svg";
 import qbPart3 from "../assets/Printed-images/Quickquit-images/QBpart3.svg";
 import qbPart4 from "../assets/Printed-images/Quickquit-images/QBpart4.svg";
-import qbPart5 from "../assets/Printed-images/Quickquit-images/QBpart5.svg";
+import qbPart5 from "../assets/Printed-images/Quickquit-images/QBPart5.svg";
 import qbPart6 from "../assets/Printed-images/Quickquit-images/QBpart6.svg";
 import qbPart7 from "../assets/Printed-images/Quickquit-images/QBpart7.svg";
 
