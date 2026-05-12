@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 // Import hero image
 import timeHeroImage from "../assets/Timemgmt-images/Timemgmt.png";
+// Import character images
+import femaleCharacter from "../assets/Timemgmt-images/Femalecharacter.png";
+import maleCharacter from "../assets/Timemgmt-images/Malecharacter.png";
 // Import other project images
 import wcagHeroImage from "../assets/WCAG-images/WCAGmainhero.png";
 import mealUHeroImage from "../assets/MealU-images/MealUHero.png";
@@ -126,21 +129,25 @@ function TimeManagementProject() {
     setSelectedImage(null);
   };
 
-  // Kitchen characters data
+  // Kitchen characters data with actual images
   const kitchenCharacters = [
     {
       name: "Chef Tim",
       role: "Time Management Expert",
       quote: "Cooking up productivity, one recipe at a time!",
-      emoji: "👨‍🍳",
-      color: "var(--accent-purple)"
+      image: maleCharacter,
+      alt: "Chef Tim character illustration",
+      color: "var(--accent-purple)",
+      bgColor: "var(--pastel-purple)"
     },
     {
       name: "Sous Chef Sam",
       role: "Organization Specialist",
       quote: "Let's prep those tasks like ingredients!",
-      emoji: "👩‍🍳",
-      color: "var(--accent-pink)"
+      image: femaleCharacter,
+      alt: "Sous Chef Sam character illustration",
+      color: "var(--accent-pink)",
+      bgColor: "var(--pastel-pink)"
     }
   ];
 
@@ -425,19 +432,31 @@ function TimeManagementProject() {
                   </div>
                 </div>
 
-                {/* Meet Your Chefs */}
+                {/* Meet Your Chefs - Updated with larger images */}
                 <div className="mb-5">
                   <h4 className="fw-bold mb-3">Meet Your Chefs</h4>
                   <div className="row g-4">
                     {kitchenCharacters.map((chef, index) => (
                       <div className="col-md-6" key={index}>
                         <div className="chef-card h-100 p-4 rounded-4 text-center" style={{ 
-                          background: `var(--pastel-${index === 0 ? 'purple' : 'pink'})`,
+                          background: chef.bgColor,
                           border: `3px solid ${chef.color}`,
                           boxShadow: "8px 8px 0 var(--shadow-color)"
                         }}>
-                          <span style={{ fontSize: "4rem" }}>{chef.emoji}</span>
-                          <h5 className="fw-bold mt-3" style={{ fontSize: "1.3rem", color: "var(--text-dark)" }}>{chef.name}</h5>
+                          <img 
+                            src={chef.image} 
+                            alt={chef.alt}
+                            style={{ 
+                              width: "200px", 
+                              height: "200px", 
+                              objectFit: "contain",
+                              marginBottom: "1rem",
+                              display: "block",
+                              marginLeft: "auto",
+                              marginRight: "auto"
+                            }}
+                          />
+                          <h5 className="fw-bold mt-2" style={{ fontSize: "1.3rem", color: "var(--text-dark)" }}>{chef.name}</h5>
                           <p className="mb-2" style={{ fontSize: "0.9rem", color: "var(--accent-dark)" }}>{chef.role}</p>
                           <p className="mb-0 fst-italic" style={{ fontSize: "0.95rem", color: "var(--text-body)" }}>"{chef.quote}"</p>
                         </div>
@@ -632,139 +651,139 @@ function TimeManagementProject() {
                 </div>
 
                 {/* Part 1: Kitchen Concept Overview */}
-<div className="mb-5">
-  <h4 className="fw-bold mb-3">Part 1: Kitchen Concept Overview</h4>
-  <p className="mb-4">
-    Two chefs introduce the kitchen metaphor, explaining how learners can use practical strategies 
-    and tools to manage their time effectively, increase productivity, and engage with the module 
-    through illustrations of food and nutrition facts.
-  </p>
-</div>
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">Part 1: Kitchen Concept Overview</h4>
+                  <p className="mb-4">
+                    Two chefs introduce the kitchen metaphor, explaining how learners can use practical strategies 
+                    and tools to manage their time effectively, increase productivity, and engage with the module 
+                    through illustrations of food and nutrition facts.
+                  </p>
+                </div>
 
-{/* Part 2: Historical Context */}
-<div className="mb-5">
-  <h4 className="fw-bold mb-3">Part 2: Historical Context</h4>
-  <p className="mb-4">
-    Learners explore the history and evolution of time management, understanding why effective 
-    techniques matter in modern work life.
-  </p>
-</div>
+                {/* Part 2: Historical Context */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">Part 2: Historical Context</h4>
+                  <p className="mb-4">
+                    Learners explore the history and evolution of time management, understanding why effective 
+                    techniques matter in modern work life.
+                  </p>
+                </div>
 
-{/* Part 3: Identifying Problem Areas */}
-<div className="mb-5">
-  <h4 className="fw-bold mb-3">Part 3: Identifying Problem Areas</h4>
-  <p className="mb-4">
-    Users learn to recognize common productivity challenges—six key “kitchen problems”—that can 
-    hinder effective time management.
-  </p>
-  <div className="row g-3">
-    {kitchenProblems.map((item, index) => (
-      <div className="col-md-6" key={index}>
-        <div className="problem-card h-100 p-4 rounded-4" style={{ 
-          background: item.color,
-          border: "2px solid var(--accent-dark)",
-          boxShadow: "6px 6px 0 var(--shadow-color)"
-        }}>
-          <div className="d-flex align-items-center gap-3 mb-2">
-            <span style={{ fontSize: "2.5rem" }}>{item.emoji}</span>
-            <h5 className="fw-bold mb-0" style={{ fontSize: "1.2rem" }}>{item.problem}</h5>
-          </div>
-          <p className="mb-0" style={{ fontSize: "0.95rem" }}>{item.analogy}</p>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+                {/* Part 3: Identifying Problem Areas */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">Part 3: Identifying Problem Areas</h4>
+                  <p className="mb-4">
+                    Users learn to recognize common productivity challenges—six key "kitchen problems"—that can 
+                    hinder effective time management.
+                  </p>
+                  <div className="row g-3">
+                    {kitchenProblems.map((item, index) => (
+                      <div className="col-md-6" key={index}>
+                        <div className="problem-card h-100 p-4 rounded-4" style={{ 
+                          background: item.color,
+                          border: "2px solid var(--accent-dark)",
+                          boxShadow: "6px 6px 0 var(--shadow-color)"
+                        }}>
+                          <div className="d-flex align-items-center gap-3 mb-2">
+                            <span style={{ fontSize: "2.5rem" }}>{item.emoji}</span>
+                            <h5 className="fw-bold mb-0" style={{ fontSize: "1.2rem" }}>{item.problem}</h5>
+                          </div>
+                          <p className="mb-0" style={{ fontSize: "0.95rem" }}>{item.analogy}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-{/* Part 4: Recipe Collection of Strategies */}
-<div className="mb-5">
-  <h4 className="fw-bold mb-3">Part 4: Recipe Collection of Strategies</h4>
-  <p className="mb-4">
-    A virtual kitchen shelf presents a curated collection of “recipe books” containing actionable, 
-    proven time management techniques. Learners can select strategies that best address their 
-    identified problem areas.
-  </p>
-  <div className="row g-4">
-    {recipes.map((recipe, index) => (
-      <div className="col-md-4" key={index}>
-        <div className="recipe-card h-100 p-4 rounded-4" style={{ 
-          background: "white",
-          border: `3px solid ${recipe.color}`,
-          boxShadow: "8px 8px 0 var(--shadow-color)"
-        }}>
-          <div className="text-center mb-3">
-            <span style={{ fontSize: "3rem" }}>{recipe.emoji}</span>
-            <h5 className="fw-bold mt-2" style={{ fontSize: "1.2rem" }}>{recipe.name}</h5>
-          </div>
-          <p className="mb-2" style={{ fontSize: "0.9rem", fontWeight: "bold", color: recipe.color }}>
-            {recipe.technique}
-          </p>
-          <p className="mb-3" style={{ fontSize: "0.85rem", lineHeight: "1.5" }}>{recipe.analogy}</p>
-          <div>
-            <p className="fw-bold mb-2" style={{ fontSize: "0.85rem" }}>🧂 Ingredients:</p>
-            <div className="d-flex flex-wrap gap-1">
-              {recipe.ingredients.map((ingredient, i) => (
-                <span key={i} className="badge p-2" style={{ 
-                  background: "var(--pastel-yellow)",
-                  color: "var(--text-dark)",
-                  border: "1px solid var(--accent-dark)",
-                  fontSize: "0.7rem"
-                }}>
-                  {ingredient}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+                {/* Part 4: Recipe Collection of Strategies */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">Part 4: Recipe Collection of Strategies</h4>
+                  <p className="mb-4">
+                    A virtual kitchen shelf presents a curated collection of "recipe books" containing actionable, 
+                    proven time management techniques. Learners can select strategies that best address their 
+                    identified problem areas.
+                  </p>
+                  <div className="row g-4">
+                    {recipes.map((recipe, index) => (
+                      <div className="col-md-4" key={index}>
+                        <div className="recipe-card h-100 p-4 rounded-4" style={{ 
+                          background: "white",
+                          border: `3px solid ${recipe.color}`,
+                          boxShadow: "8px 8px 0 var(--shadow-color)"
+                        }}>
+                          <div className="text-center mb-3">
+                            <span style={{ fontSize: "3rem" }}>{recipe.emoji}</span>
+                            <h5 className="fw-bold mt-2" style={{ fontSize: "1.2rem" }}>{recipe.name}</h5>
+                          </div>
+                          <p className="mb-2" style={{ fontSize: "0.9rem", fontWeight: "bold", color: recipe.color }}>
+                            {recipe.technique}
+                          </p>
+                          <p className="mb-3" style={{ fontSize: "0.85rem", lineHeight: "1.5" }}>{recipe.analogy}</p>
+                          <div>
+                            <p className="fw-bold mb-2" style={{ fontSize: "0.85rem" }}>🧂 Ingredients:</p>
+                            <div className="d-flex flex-wrap gap-1">
+                              {recipe.ingredients.map((ingredient, i) => (
+                                <span key={i} className="badge p-2" style={{ 
+                                  background: "var(--pastel-yellow)",
+                                  color: "var(--text-dark)",
+                                  border: "1px solid var(--accent-dark)",
+                                  fontSize: "0.7rem"
+                                }}>
+                                  {ingredient}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-{/* Part 5: Interactive Application */}
-<div className="mb-5">
-  <h4 className="fw-bold mb-3">Part 5: Interactive Application</h4>
-  <p className="mb-4">
-    Learners engage in a drag-and-drop exercise to match common productivity challenges with 
-    appropriate recipe strategies. This simulates real-world decision-making and reinforces 
-    learning through hands-on practice.
-  </p>
-  <div className="interactive-card p-4 rounded-4" style={{ 
-    background: "var(--pastel-mint)",
-    border: "3px solid var(--accent-green)",
-    boxShadow: "8px 8px 0 var(--shadow-color)"
-  }}>
-    <div className="row align-items-center">
-      <div className="col-md-8">
-        <h5 className="fw-bold mb-3" style={{ fontSize: "1.2rem" }}>
-          🎮 Matching Game: Ingredients to Steps
-        </h5>
-        <p className="mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.6" }}>
-          Match productivity problems with the appropriate recipe solutions, reinforcing knowledge 
-          through active application.
-        </p>
-      </div>
-      <div className="col-md-4 text-center">
-        <div className="game-preview p-3 rounded-3" style={{ 
-          background: "white",
-          border: "2px solid var(--accent-purple)"
-        }}>
-          <span style={{ fontSize: "3rem" }}>🧩</span>
-          <p className="small mb-0 mt-2 fw-bold">Match the Ingredients</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                {/* Part 5: Interactive Application */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">Part 5: Interactive Application</h4>
+                  <p className="mb-4">
+                    Learners engage in a drag-and-drop exercise to match common productivity challenges with 
+                    appropriate recipe strategies. This simulates real-world decision-making and reinforces 
+                    learning through hands-on practice.
+                  </p>
+                  <div className="interactive-card p-4 rounded-4" style={{ 
+                    background: "var(--pastel-mint)",
+                    border: "3px solid var(--accent-green)",
+                    boxShadow: "8px 8px 0 var(--shadow-color)"
+                  }}>
+                    <div className="row align-items-center">
+                      <div className="col-md-8">
+                        <h5 className="fw-bold mb-3" style={{ fontSize: "1.2rem" }}>
+                          🎮 Matching Game: Ingredients to Steps
+                        </h5>
+                        <p className="mb-0" style={{ fontSize: "0.95rem", lineHeight: "1.6" }}>
+                          Match productivity problems with the appropriate recipe solutions, reinforcing knowledge 
+                          through active application.
+                        </p>
+                      </div>
+                      <div className="col-md-4 text-center">
+                        <div className="game-preview p-3 rounded-3" style={{ 
+                          background: "white",
+                          border: "2px solid var(--accent-purple)"
+                        }}>
+                          <span style={{ fontSize: "3rem" }}>🧩</span>
+                          <p className="small mb-0 mt-2 fw-bold">Match the Ingredients</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-{/* Part 6: Knowledge Reinforcement */}
-<div className="mb-5">
-  <h4 className="fw-bold mb-3">Part 6: Knowledge Reinforcement</h4>
-  <p className="mb-4">
-    Learners apply the strategies to new scenarios, ensuring techniques are memorable, transferable, 
-    and ready to use in real-life workflow challenges.
-  </p>
-</div>
+                {/* Part 6: Knowledge Reinforcement */}
+                <div className="mb-5">
+                  <h4 className="fw-bold mb-3">Part 6: Knowledge Reinforcement</h4>
+                  <p className="mb-4">
+                    Learners apply the strategies to new scenarios, ensuring techniques are memorable, transferable, 
+                    and ready to use in real-life workflow challenges.
+                  </p>
+                </div>
 
                 <div>
                   <h4 className="fw-bold mb-3">Interface Design Concepts</h4>
