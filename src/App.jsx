@@ -30,7 +30,7 @@ import dailyJournalImage from "./assets/Printed-images/Dailyjournal.svg";
 // Import hero video and static hero image
 import portfolioHeroVideo from "./videos/Portfolioherovid.mp4";
 import wcagProjectVideo from "./videos/Wcagvid.mp4";
-import timeManagementVideo from "./videos/TimeMgmtvideo.mp4";
+import timeManagementVideo from "./videos/Timemgmtvideo.mp4";
 
 // Import Mini Projects assets
 import beyoncebowlImage from "./assets/Mini-projects/Beyoncebowl.svg";
