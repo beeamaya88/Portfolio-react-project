@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import WcagProject from './pages/WcagProject';
 import TimeManagementProject from "./pages/Timemgmt";
@@ -27,8 +27,7 @@ import quickguideImage from "./assets/Printed-images/Quickguidecover.svg";
 import sacredPamphletImage from "./assets/Printed-images/Sacredpamphletcover.svg";
 import dailyJournalImage from "./assets/Printed-images/Dailyjournal.svg";
 
-// Import hero video and static hero image
-import portfolioHeroVideo from "./videos/Portfolioherovid.mp4";
+// Import project videos
 import wcagProjectVideo from "./videos/Wcagvid.mp4";
 import timeManagementVideo from "./videos/Timemgmtvideo.mp4";
 
@@ -39,22 +38,6 @@ import userPersonaImage from "./assets/Mini-projects/Userpersona.svg";
 
 function App() {
   const [activeProjectTab, setActiveProjectTab] = useState("ux");
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  const [useVideo, setUseVideo] = useState(true);
-  const videoRef = useRef(null);
-
-  // Check screen size to determine if video should be shown
-  useEffect(() => {
-    const checkScreenSize = () => {
-      const showVideo = window.innerWidth >= 1025;
-      setUseVideo(showVideo);
-      console.log(`Screen width: ${window.innerWidth}px - ${showVideo ? 'Showing VIDEO' : 'Showing STATIC IMAGE'}`);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
 
   // Helper function to scroll to a section smoothly
   const scrollToSection = (id) => {
@@ -66,19 +49,6 @@ function App() {
         top: sectionTop,
         behavior: "smooth"
       });
-    }
-  };
-
-  // Toggle video play/pause for accessibility
-  const toggleVideo = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-        setIsVideoPlaying(false);
-      } else {
-        videoRef.current.play();
-        setIsVideoPlaying(true);
-      }
     }
   };
 
@@ -241,47 +211,22 @@ function App() {
             <>
               <Navbar />
 
-              {/* HERO SECTION WITH VIDEO/STATIC BACKGROUND */}
-              <section id="home" className="hero-section-video">
-                <div className="hero-video-background">
-                  {useVideo ? (
-                    <>
-                      <video
-                        ref={videoRef}
-                        autoPlay
-                        muted
-                        playsInline
-                        loop
-                        aria-label="Portfolio introduction video showing design work"
-                        className="hero-background-video"
-                      >
-                        <source src={portfolioHeroVideo} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                      <button
-                        onClick={toggleVideo}
-                        className="hero-video-toggle"
-                        aria-label={isVideoPlaying ? "Pause background video" : "Play background video"}
-                        title={isVideoPlaying ? "Pause video" : "Play video"}
-                      >
-                        <span aria-hidden="true">{isVideoPlaying ? "⏸️" : "▶️"}</span>
-                      </button>
-                    </>
-                  ) : (
-                    <div 
-                      className="hero-background-image"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: 0
-                      }}
-                      aria-label="Portfolio hero background"
-                    />
-                  )}
+              {/* HERO SECTION WITH STATIC BACKGROUND */}
+              <section id="home" className="hero-section-static">
+                <div className="hero-static-background">
+                  <div 
+                    className="hero-background-overlay"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      background: "linear-gradient(135deg, #e8f0fe 0%, #f5e6f5 50%, #fff0e0 100%)",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      zIndex: 0
+                    }}
+                    aria-label="Portfolio hero background"
+                  />
                 </div>
                 
                 <div className="container hero-content">
