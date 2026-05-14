@@ -16,10 +16,24 @@ import quickguideImage from '../assets/Printed-images/Quickguidecover.svg';
 import sacredPamphletImage from '../assets/Printed-images/Sacredpamphletcover.svg';
 import dailyJournalImage from '../assets/Printed-images/Dailyjournal.svg';
 
+// Import Beyonce image
+import beyonceImage from "../assets/Mini-projects/Beyonce-images/Beyoncev3.svg";
+
 function ProjectTabs({ projectTab, setProjectTab, excludeProject }) {
   
   // Define all projects
   const allProjects = [
+    {
+      id: "beyonce",
+      title: "Beyoncé Bowl Landing Page",
+      category: "ux",
+      image: beyonceImage,
+      isVideo: false,
+      alt: "Beyoncé Bowl landing page design",
+      description: "A vibrant landing page concept celebrating Beyoncé's iconic halftime performance with dynamic typography and immersive visuals.",
+      link: "/beyonce-lp",
+      tags: ["Landing Page", "UI Design", "Visual Design"]
+    },
     {
       id: "wcag",
       title: "WCAG 2.2 eLearning Platform",

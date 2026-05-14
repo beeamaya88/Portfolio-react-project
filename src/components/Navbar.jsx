@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/Home-images/Logo1.svg";
+import BackButton from "./BackButton";
 
 function Navbar() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Check if we're on the home page
+  const isHomePage = location.pathname === "/";
 
   // Toggle mobile menu
   const toggleMenu = () => {
@@ -45,6 +49,9 @@ function Navbar() {
       >
         Skip to main content
       </a>
+
+      {/* Back Button - Only show on non-home pages */}
+      {!isHomePage && <BackButton />}
 
       <div className="container-fluid bg-white navbar-custom">
         <div className="container">

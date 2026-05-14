@@ -2834,3 +2834,58 @@ iframe {
   display: flex;
   align-items: center;
 }
+/* ============================================
+   BACK BUTTON - STICKY ON ALL PAGES
+   ============================================ */
+
+.back-button {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  z-index: 999;
+  background: white;
+  border: 2px solid var(--border-black);
+  border-radius: 40px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 0 var(--shadow-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-button:hover {
+  transform: translateY(-2px) translateX(-2px);
+  box-shadow: 6px 6px 0 var(--shadow-color);
+  background: var(--accent-purple);
+  color: white;
+  border-color: var(--border-black);
+}
+
+.back-button:active {
+  transform: translateY(1px) translateX(1px);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+/* Adjust for smaller screens to avoid overlapping with navbar */
+@media (max-width: 768px) {
+  .back-button {
+    top: 80px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .back-button {
+    top: 75px;
+    left: 8px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+}

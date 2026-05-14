@@ -1,5 +1,5 @@
-import { useState} from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import WcagProject from './pages/WcagProject';
 import TimeManagementProject from "./pages/Timemgmt";
 import MealU from "./pages/Mealu";
@@ -13,6 +13,7 @@ import Dailyjournal from "./pages/Dailyjournal";
 import Ecigposter from "./pages/Ecigposter";
 import Quickquitbooklet from "./pages/Quickquitbooklet";
 import Sacredtobaccopamphlet from "./pages/Sacredtobaccopamphlet";
+import BeyonceLP from './pages/BeyonceLP';
 
 // Import project images
 import mealUHeroImage from "./assets/MealU-images/MealUHero.png";
@@ -32,7 +33,7 @@ import wcagProjectVideo from "./videos/Wcagvid.mp4";
 import timeManagementVideo from "./videos/Timemgmtvideo.mp4";
 
 // Import Mini Projects assets
-import beyoncebowlImage from "./assets/Mini-projects/Beyoncebowl.svg";
+import beyoncebowlImage from "./assets/Mini-projects/Beyonce-images/Beyoncev3.svg";
 import emailConfirmationImage from "./assets/Mini-projects/Emailconfirmationcover.svg";
 import userPersonaImage from "./assets/Mini-projects/Userpersona.svg";
 
@@ -60,7 +61,8 @@ function App() {
       image: beyoncebowlImage,
       alt: "Beyoncé Bowl landing page design",
       description: "A vibrant landing page concept celebrating Beyoncé's iconic halftime performance with dynamic typography and immersive visuals.",
-      category: "Landing Page"
+      category: "Landing Page",
+      link: "/beyonce-lp"
     },
     {
       id: "emailconfirmation",
@@ -68,16 +70,17 @@ function App() {
       image: emailConfirmationImage,
       alt: "Email confirmation design cover",
       description: "A clean, user-friendly email confirmation template that guides users through post-signup verification with clarity and brand consistency.",
-      category: "Email Design"
+      category: "Email Design",
+      link: "#"
     },
-    
     {
       id: "userpersona",
       title: "User Persona and User Journey",
       image: userPersonaImage,
       alt: "User persona and user journey template design",
       description: "A detailed user persona template combined with user journey mapping, capturing demographics, goals, frustrations, and behavioral patterns for comprehensive audience research.",
-      category: "User Persona & User Journey"
+      category: "User Persona & User Journey",
+      link: "#"
     }
   ];
 
@@ -488,48 +491,63 @@ function App() {
                 </div>
               </section>
 
-         {/* MINI PROJECTS SECTION - Responsive Grid (3 per row) */}
-<section id="mini-projects" className="mini-projects-section py-5">
-  <div className="container">
-    <div className="row justify-content-center">
-      <div className="col-lg-8">
-        <h2 className="text-uppercase small fw-bold mb-4">Mini Projects</h2>
-        <p className="fs-3 fw-light mb-5">
-          Discover landing pages, email confirmations to fun user personas and journeys.
-        </p>
-      </div>
-    </div>
+              {/* MINI PROJECTS SECTION - Using React Router Link */}
+              <section id="mini-projects" className="mini-projects-section py-5">
+                <div className="container">
+                  <div className="row justify-content-center">
+                    <div className="col-lg-8">
+                      <h2 className="text-uppercase small fw-bold mb-4">Mini Projects</h2>
+                      <p className="fs-3 fw-light mb-5">
+                        Discover landing pages, email confirmations to fun user personas and journeys.
+                      </p>
+                    </div>
+                  </div>
 
-    {/* Responsive Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
-    <div className="row g-5">
-      {miniProjects.map((project) => (
-        <div className="col-lg-4 col-md-6 col-sm-12" key={project.id}>
-          <div className="mini-project-grid-item">
-            <div 
-              className="illustrative-image-wrapper"
-              onClick={() => console.log(`Opening: ${project.title}`)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && console.log(`Opening: ${project.title}`)}
-              aria-label={`View ${project.title}`}
-            >
-              <img 
-                src={project.image} 
-                alt={project.alt}
-                className="illustrative-image"
-              />
-            </div>
-            <div className="illustrative-caption">
-              <h5 className="illustrative-title">{project.title}</h5>
-              <p className="illustrative-description">{project.description}</p>
-              <span className="illustrative-badge">{project.category}</span>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+                  <div className="row g-5">
+                    {miniProjects.map((project) => (
+                      <div className="col-lg-4 col-md-6 col-sm-12" key={project.id}>
+                        {project.link !== "#" ? (
+                          <Link 
+                            to={project.link}
+                            className="mini-project-link"
+                            style={{ textDecoration: "none", display: "block" }}
+                          >
+                            <div className="mini-project-grid-item">
+                              <div className="illustrative-image-wrapper">
+                                <img 
+                                  src={project.image} 
+                                  alt={project.alt}
+                                  className="illustrative-image"
+                                />
+                              </div>
+                              <div className="illustrative-caption">
+                                <h5 className="illustrative-title">{project.title}</h5>
+                                <p className="illustrative-description">{project.description}</p>
+                                <span className="illustrative-badge">{project.category}</span>
+                              </div>
+                            </div>
+                          </Link>
+                        ) : (
+                          <div className="mini-project-grid-item" style={{ cursor: "default" }}>
+                            <div className="illustrative-image-wrapper">
+                              <img 
+                                src={project.image} 
+                                alt={project.alt}
+                                className="illustrative-image"
+                              />
+                            </div>
+                            <div className="illustrative-caption">
+                              <h5 className="illustrative-title">{project.title}</h5>
+                              <p className="illustrative-description">{project.description}</p>
+                              <span className="illustrative-badge">{project.category}</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
 
               {/* FOOTER */}
               <footer className="footer-section py-5 bg-dark text-white">
@@ -563,6 +581,7 @@ function App() {
         <Route path="/print/ecig-poster" element={<Ecigposter />} />
         <Route path="/print/quickguide" element={<Quickquitbooklet />} />
         <Route path="/print/sacred-tobacco" element={<Sacredtobaccopamphlet />} />
+        <Route path="/beyonce-lp" element={<BeyonceLP />} />
         <Route path="/about-page" element={<About />} />
       </Routes>
     </Router>
