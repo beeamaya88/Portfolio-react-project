@@ -14,6 +14,8 @@ import Ecigposter from "./pages/Ecigposter";
 import Quickquitbooklet from "./pages/Quickquitbooklet";
 import Sacredtobaccopamphlet from "./pages/Sacredtobaccopamphlet";
 import BeyonceLP from './pages/BeyonceLP';
+import EmailConfirmation from './pages/Emailconfirmation';
+import AhsokaUserprofile from './pages/Ahsokauserprofile'; 
 
 // Import project images
 import mealUHeroImage from "./assets/MealU-images/MealUHero.png";
@@ -71,7 +73,7 @@ function App() {
       alt: "Email confirmation design cover",
       description: "A clean, user-friendly email confirmation template that guides users through post-signup verification with clarity and brand consistency.",
       category: "Email Design",
-      link: "#"
+      link: "/email-confirmation"
     },
     {
       id: "userpersona",
@@ -80,7 +82,7 @@ function App() {
       alt: "User persona and user journey template design",
       description: "A detailed user persona template combined with user journey mapping, capturing demographics, goals, frustrations, and behavioral patterns for comprehensive audience research.",
       category: "User Persona & User Journey",
-      link: "#"
+      link: "/ahsoka-user-profile"
     }
   ];
 
@@ -582,6 +584,8 @@ function App() {
         <Route path="/print/quickguide" element={<Quickquitbooklet />} />
         <Route path="/print/sacred-tobacco" element={<Sacredtobaccopamphlet />} />
         <Route path="/beyonce-lp" element={<BeyonceLP />} />
+        <Route path="/email-confirmation" element={<EmailConfirmation />} />
+        <Route path="/ahsoka-user-profile" element={<AhsokaUserprofile />} />
         <Route path="/about-page" element={<About />} />
       </Routes>
     </Router>
