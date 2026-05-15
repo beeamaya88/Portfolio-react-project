@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 // Import journal images
-import journalCover from "../assets/Printed-images/Dailyjournal/Dailyjournalhero.jpg";
+import journalCover from "../assets/Printed-images/Dailyjournal/Dailyjournalhero.JPG";
 import journalSpread1 from "../assets/Printed-images/Dailyjournal/Identifyfeelings.svg";
 import journalSpread2 from "../assets/Printed-images/Dailyjournal/Goalssupport.svg";
 import journalSpread3 from "../assets/Printed-images/Dailyjournal/Feelstriggers.svg";
